@@ -11,23 +11,24 @@
 
 
 # 2つの変数を使って役職順に並び替える
-# classes = ["社長","専務","部長","課長","係長"]
-#
-# members = [
-#   { name: "吉田麻也", status: "課長"},
-#   { name: "本田圭佑", status: "部長"},
-#   { name: "香川真司", status: "専務"},
-#   { name: "岡崎慎司", status: "係長"},
-#   { name: "ハリルホジッチ", status: "社長"},
-# ]
+classes = ["社長","専務","部長","課長","係長"]
+
+members = [
+  { name: "吉田麻也", status: "課長"},
+  { name: "本田圭佑", status: "部長"},
+  { name: "香川真司", status: "専務"},
+  { name: "岡崎慎司", status: "係長"},
+  { name: "ハリルホジッチ", status: "社長"},
+]
 
 # 回答1
-# n = 0
-# while n < classes.size
-#   p members.select {|member| member[:status] == classes[n]}
-#   n += 1
-# end
-
+n = 0
+sort_members = []
+while n < classes.size
+  sort_members << members.select {|member| member[:status] == classes[n]}
+  n += 1
+end
+p sort_members.flatten
 # 回答2
 # members.sort_by!{ |member| classes.find_index(member[:status]) }
 #
